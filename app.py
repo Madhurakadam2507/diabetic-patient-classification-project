@@ -138,20 +138,6 @@ if predict_btn:
         """, unsafe_allow_html=True)
         st.progress(95)
 
-        # -------- DOCTOR RECOMMENDATION --------
-        st.markdown("### 🧑‍⚕️ Doctor Recommendation")
-
-        st.markdown("""
-        <div class='card'>
-        👨‍⚕️ <b>Endocrinologist</b> – Specialist for diabetes & hormones<br><br>
-        🏥 <b>Diabetologist</b> – Expert in diabetes care<br><br>
-        🥗 <b>Dietician/Nutritionist</b> – Helps manage diet plan<br><br>
-        🩺 <b>General Physician</b> – First level consultation
-        </div>
-        """, unsafe_allow_html=True)
-
-        st.warning("📍 It is recommended to consult a doctor within 1–2 days.")
-
     else:
         st.markdown("""
         <div class='card' style='border-left: 5px solid green;'>
@@ -160,18 +146,6 @@ if predict_btn:
         </div>
         """, unsafe_allow_html=True)
         st.progress(35)
-
-        # -------- HEALTH GUIDANCE --------
-        st.markdown("### 💡 Health Guidance")
-
-        st.success("""
-        🥗 Maintain balanced diet  
-        🏃 Exercise daily (30 mins)  
-        💧 Stay hydrated  
-        🩺 Regular health checkups  
-        """)
-
-        st.info("👨‍⚕️ You can still consult a General Physician for routine monitoring.")
 
 # -------- FOOTER --------
 st.markdown("---")
