@@ -82,12 +82,39 @@ if st.button("🔍 Predict Diabetes Risk"):
 
     st.markdown("### 🧾 Prediction Result")
 
+    # -------- HIGH RISK --------
     if result[0] == 1:
         st.error("⚠️ High Risk: The person is likely **Diabetic**")
         st.progress(90)
+
+        # Doctor Recommendation
+        st.markdown("### 🧑‍⚕️ Doctor Recommendation")
+
+        st.info("""
+        👨‍⚕️ **Endocrinologist** – Diabetes & hormone specialist  
+        🏥 **Diabetologist** – Diabetes management expert  
+        🥗 **Dietician/Nutritionist** – Diet planning  
+        🩺 **General Physician** – Initial consultation  
+        """)
+
+        st.warning("📍 Please consult a doctor within 1–2 days.")
+
+    # -------- LOW RISK --------
     else:
         st.success("✅ Low Risk: The person is **Not Diabetic**")
         st.progress(30)
+
+        # Health Guidance
+        st.markdown("### 💡 Health Guidance")
+
+        st.success("""
+        🥗 Maintain a balanced diet  
+        🏃 Exercise regularly  
+        💧 Stay hydrated  
+        🩺 Regular health checkups  
+        """)
+
+        st.info("👨‍⚕️ You can still consult a General Physician for routine monitoring.")
 
 # -------- FOOTER --------
 st.markdown("---")
