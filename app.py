@@ -46,36 +46,44 @@ st.markdown("<div class='subtitle'>Smart health analysis powered by Machine Lear
 
 st.markdown("---")
 
-# -------- INPUT SECTION --------
+# -------- INPUT CARDS --------
 col1, col2 = st.columns(2)
 
 with col1:
     st.markdown("<div class='card'>", unsafe_allow_html=True)
     st.subheader("👤 Personal Details")
+    
     gender = st.selectbox("Gender", ['Female', 'Male', 'Other'])
     age = st.slider("Age", 0, 100, 50)
+    
     st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown("<div class='card'>", unsafe_allow_html=True)
     st.subheader("❤️ Medical History")
+    
     hypertension = st.radio("Hypertension", ["Yes", "No"])
     heart_disease = st.radio("Heart Disease", ["Yes", "No"])
+    
     st.markdown("</div>", unsafe_allow_html=True)
 
 with col2:
     st.markdown("<div class='card'>", unsafe_allow_html=True)
     st.subheader("🚬 Lifestyle")
+    
     smoking_history = st.selectbox(
         "Smoking History",
         ['never', 'No Info', 'former', 'not current', 'ever', 'current']
     )
+    
     st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown("<div class='card'>", unsafe_allow_html=True)
     st.subheader("🧪 Health Metrics")
+    
     bmi = st.slider("BMI", 20.0, 50.0, 28.0)
     HbA1c_level = st.slider("HbA1c Level", 5.0, 10.0, 6.6)
     blood_glucose_level = st.slider("Blood Glucose", 25, 500, 200)
+    
     st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("---")
@@ -102,7 +110,7 @@ else:
 hypertension = 1 if hypertension == "Yes" else 0
 heart_disease = 1 if heart_disease == "Yes" else 0
 
-# -------- BUTTON --------
+# -------- PREDICT BUTTON --------
 st.markdown("<div style='text-align:center;'>", unsafe_allow_html=True)
 predict_btn = st.button("🚀 Analyze Patient")
 st.markdown("</div>", unsafe_allow_html=True)
@@ -125,43 +133,45 @@ if predict_btn:
         st.markdown("""
         <div class='card' style='border-left: 5px solid red;'>
             <h2 style='color:red;'>⚠️ High Risk Detected</h2>
-            <p>The patient is likely <b>Diabetic</b>.</p>
+            <p>The patient is likely <b>Diabetic</b>. Immediate medical consultation is recommended.</p>
         </div>
         """, unsafe_allow_html=True)
-
         st.progress(95)
 
         # -------- DOCTOR RECOMMENDATION --------
-        st.markdown("### 🧑‍⚕️ Recommended Specialists")
+        st.markdown("### 🧑‍⚕️ Doctor Recommendation")
 
-        st.info("""
-        👨‍⚕️ **Endocrinologist** – Diabetes & hormone specialist  
-        🏥 **Diabetologist** – Diabetes management expert  
-        🥗 **Dietician/Nutritionist** – Diet planning  
-        🩺 **General Physician** – Initial consultation  
-        """)
+        st.markdown("""
+        <div class='card'>
+        👨‍⚕️ <b>Endocrinologist</b> – Specialist for diabetes & hormones<br><br>
+        🏥 <b>Diabetologist</b> – Expert in diabetes care<br><br>
+        🥗 <b>Dietician/Nutritionist</b> – Helps manage diet plan<br><br>
+        🩺 <b>General Physician</b> – First level consultation
+        </div>
+        """, unsafe_allow_html=True)
 
-        st.warning("📍 Visit a nearby hospital or clinic within 1–2 days.")
+        st.warning("📍 It is recommended to consult a doctor within 1–2 days.")
 
     else:
         st.markdown("""
         <div class='card' style='border-left: 5px solid green;'>
             <h2 style='color:lightgreen;'>✅ Low Risk</h2>
-            <p>The patient is <b>Not Diabetic</b>.</p>
+            <p>The patient is <b>Not Diabetic</b>. Maintain a healthy lifestyle.</p>
         </div>
         """, unsafe_allow_html=True)
-
         st.progress(35)
 
-        # -------- HEALTH TIPS --------
-        st.markdown("### 💡 Health Recommendations")
+        # -------- HEALTH GUIDANCE --------
+        st.markdown("### 💡 Health Guidance")
 
         st.success("""
-        🥗 Maintain a balanced diet  
-        🏃 Exercise regularly (30 min/day)  
+        🥗 Maintain balanced diet  
+        🏃 Exercise daily (30 mins)  
         💧 Stay hydrated  
         🩺 Regular health checkups  
         """)
+
+        st.info("👨‍⚕️ You can still consult a General Physician for routine monitoring.")
 
 # -------- FOOTER --------
 st.markdown("---")
