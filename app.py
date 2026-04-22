@@ -88,7 +88,7 @@ if st.button("🔍 Predict Diabetes Risk"):
         st.progress(90)
 
         # Doctor Recommendation
-        st.markdown("### 🧑‍⚕️ Doctor Recommendation")
+        st.markdown("### ‍⚕️ Doctor Recommendation")
 
         st.info("""
         👨‍⚕️ **Endocrinologist** – Diabetes & hormone specialist  
