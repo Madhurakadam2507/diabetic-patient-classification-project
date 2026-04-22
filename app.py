@@ -82,39 +82,30 @@ if st.button("🔍 Predict Diabetes Risk"):
 
     st.markdown("### 🧾 Prediction Result")
 
-    # -------- HIGH RISK --------
     if result[0] == 1:
         st.error("⚠️ High Risk: The person is likely **Diabetic**")
         st.progress(90)
 
-        # Doctor Recommendation
-        st.markdown("### 🧑‍⚕️ Doctor Recommendation")
-
-        st.info("""
-        👨‍⚕️ **Endocrinologist** – Diabetes & hormone specialist  
-        🏥 **Diabetologist** – Diabetes management expert  
-        🥗 **Dietician/Nutritionist** – Diet planning  
-        🩺 **General Physician** – Initial consultation  
+        # 📍 NEXT STEPS (ADDED)
+        st.markdown("### 📍 What to do next")
+        st.warning("""
+        • Consult a doctor within 1–2 days  
+        • Get blood sugar tests done  
+        • Avoid sugary foods immediately  
         """)
 
-        st.warning("📍 Please consult a doctor within 1–2 days.")
-
-    # -------- LOW RISK --------
     else:
         st.success("✅ Low Risk: The person is **Not Diabetic**")
         st.progress(30)
 
-        # Health Guidance
-        st.markdown("### 💡 Health Guidance")
-
+        # 💡 HEALTH TIPS (ADDED)
+        st.markdown("### 💡 Healthy Lifestyle Tips")
         st.success("""
-        🥗 Maintain a balanced diet  
-        🏃 Exercise regularly  
-        💧 Stay hydrated  
-        🩺 Regular health checkups  
+        • Eat a balanced diet 🥗  
+        • Exercise daily (30 mins) 🏃  
+        • Drink enough water 💧  
+        • Do regular health checkups 🩺  
         """)
-
-        st.info("👨‍⚕️ You can still consult a General Physician for routine monitoring.")
 
 # -------- FOOTER --------
 st.markdown("---")
