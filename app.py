@@ -3,6 +3,7 @@ import pandas as pd
 import pickle as pkl
 
 # -------- PAGE CONFIG --------
+
 st.set_page_config(
     page_title="AI Diabetes Predictor",
     page_icon="🧬",
